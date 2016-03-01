@@ -32,7 +32,8 @@
     "mantra-core": "^1.2.0",
     "react-mounter": "^1.0.0",
     "elemental": "^0.5.13",
-    "react-bootstrap": "^0.28.3"
+    "react-bootstrap": "latest",
+    "react-bootstrap-datetimepicker": "latest"
   },
   "private": true
 }
