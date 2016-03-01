@@ -1,9 +1,8 @@
 import React from 'react';
-import {Grid, row, col, PageHeader} from 'react-bootstrap';
+import {Grid, Row, Col, PageHeader} from 'react-bootstrap';
 
 
 const Layout = ({content = () => null}) => (
-
     <Grid>
         <Row>
             <Col xs="{12">
