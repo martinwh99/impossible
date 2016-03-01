@@ -8,7 +8,7 @@ const Layout = ({content = () => null}) => (
 
         <Row>
 
-            <Col xs="{12">
+            <Col xs={12}>
                 <PageHeader>Impossible List</PageHeader>
             </Col>
 
