@@ -7,7 +7,7 @@ import initContext from './configs/context';
 
 //modules
 import coreModule from './modules/core';
-import userModule from './modules/user';
+import userModule from './modules/users';
 
 // init context
 const context = initContext();
