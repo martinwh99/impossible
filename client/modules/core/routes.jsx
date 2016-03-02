@@ -4,7 +4,7 @@ import {mount} from 'react-mounter';
 import Layout from './components/MainLayout.jsx';
 import ItemList from '../items/components/ItemList.jsx';
 import EditItem from '../items/components/EditItems.jsx';
-import NewUser from '../users/components/NewUser.jsx';
+import NewUser from '../users/containers/NewUser.js';
 
 export default function (injectDeps, {FlowRouter}){
     const MainLayoutCtx = injectDeps(Layout);

@@ -2,24 +2,43 @@ import React from 'react';
 import {Col, Panel, Input, ButtonInput, Glyphicon} from 'react-bootstrap';
 
 
-const NewUser = ({content = () => null}) => (
+class NewUser extends React.Component {
 
-    <Col xs={12} sm={6} smOffset={3}>
+    render() {
+        const {error} = this.props;
 
-        <Panel>
+        return (
 
-            <h1>Register</h1>
+            <Col xs={12} sm={6} smOffset={3}>
 
-            <form>
-                <Input type="email" placeholder="Email"/>
-                <Input type="password" placeholder="Password"/>
+                <Panel>
 
-                <ButtonInput bsStyle="primary" type="submit" value="Sign Up"/>
-            </form>
+                    <h1>Register</h1>
+                    {error ? <p style={{color: 'red'}}>{error}</p>:null}
 
-        </Panel>
+                    <form>
+                        <Input type="email" placeholder="Email"/>
+                        <Input type="password" placeholder="Password"/>
 
-    </Col>
-);
+                        <ButtonInput onClick={this.createUser.bind(this)} bsStyle="primary" type="submit" value="Sign Up"/>
+                    </form>
+
+                </Panel>
+
+            </Col>
+
+        )
+    }
+
+
+    createUser(e) {
+        e.preventDefault();
+        const {create} = this.props;
+        const {email,password} = this.refs;
+        create(email.getValue(), password.getValue());
+        email.getInputDOMNode().value='';
+        password.getInputDOMNode().value='';
+    }
+}
 
 export default NewUser;

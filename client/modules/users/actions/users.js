@@ -16,5 +16,9 @@ export default {
 
         Accounts.createUser({email, password});
         FlowRouter.go('/');
+    },
+
+    clearError({LocalState}) {
+        return LocalState.set('SAVING_ERROR',null);
     }
 }
