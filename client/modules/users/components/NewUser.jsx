@@ -17,8 +17,8 @@ class NewUser extends React.Component {
                     {error ? <p style={{color: 'red'}}>{error}</p>:null}
 
                     <form>
-                        <Input type="email" placeholder="Email"/>
-                        <Input type="password" placeholder="Password"/>
+                        <Input ref="email" type="email" placeholder="Email"/>
+                        <Input ref="password" type="password" placeholder="Password"/>
 
                         <ButtonInput onClick={this.createUser.bind(this)} bsStyle="primary" type="submit" value="Sign Up"/>
                     </form>
