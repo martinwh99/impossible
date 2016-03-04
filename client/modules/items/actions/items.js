@@ -8,12 +8,15 @@ export default {
             return LocalState.set('CREATE_ITEM_ERROR', 'Item name is required.');
         }
         LocalState.set('CREATE_ITEM_ERROR', null);
+
         Meteor.call('items.create', name, description, due, (err) => {
             if (err) {
                 return LocalState.set('SAVING_ERROR', err.message);
             }
         });
+
         FlowRouter.go('/');
+
     },
 
     clearErrors({LocalState}) {

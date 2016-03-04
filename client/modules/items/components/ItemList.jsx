@@ -24,7 +24,8 @@ const ItemList = ({items}) =>(
 
             </Col>
 
-            {items.map(item =>(<Item key={item._id} />
+            {items.map(item => (
+                <Item key={item._id} item={item} />
             ))}
 
         </Row>

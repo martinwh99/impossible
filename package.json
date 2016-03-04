@@ -33,7 +33,8 @@
     "react-mounter": "^1.0.0",
     "elemental": "^0.5.13",
     "react-bootstrap": "latest",
-    "react-bootstrap-datetimepicker": "latest"
+    "react-bootstrap-datetimepicker": "latest",
+    "moment": "latest"
   },
   "private": true
 }
