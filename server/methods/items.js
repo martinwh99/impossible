@@ -7,6 +7,7 @@ import {check} from 'meteor/check';
 
 
 export default function () {
+
     Meteor.methods({
         'categories.create'(name) {
             check(name, String);
@@ -16,4 +17,15 @@ export default function () {
             Categories.insert(category);
         }
     });
+
+    Meteor.methods({
+        'items.create'(name, description) {
+            check(name, String);
+            check(description, String);
+            const createdAt = new Date();
+            const item = {name, description, createdAt};
+            Items.insert(item);
+        }
+    });
+
 }

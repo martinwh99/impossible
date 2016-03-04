@@ -4,7 +4,7 @@ import {Row, Col, Glyphicon} from 'react-bootstrap';
 
 import ItemProgress from './ItemProgress.jsx';
 
-const ItemList = ({content = () => null}) =>(
+const ItemList = ({items}) =>(
 
     <Row>
 
@@ -24,7 +24,8 @@ const ItemList = ({content = () => null}) =>(
 
             </Col>
 
-            <Item />
+            {items.map(item =>(<Item key={item._id} />
+            ))}
 
         </Row>
 

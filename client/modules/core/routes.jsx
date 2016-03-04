@@ -2,12 +2,13 @@ import React from 'react';
 import {mount} from 'react-mounter';
 
 import Layout from './components/MainLayout.jsx';
-import ItemList from '../items/components/ItemList.jsx';
-import EditItem from '../items/components/EditItems.jsx';
-import NewUser from '../users/containers/NewUser.js';
-import Login from '../users/containers/Login.js';
+import ItemList from '../items/containers/ItemList';
+import EditItem from '../items/containers/EditItem';
 import CategoryList from '../items/containers/CategoryList.js';
 import NewCategory from '../items/containers/NewCategory.js';
+import NewUser from '../users/containers/NewUser.js';
+import Login from '../users/containers/Login.js';
+
 
 export default function (injectDeps, {FlowRouter}){
     const MainLayoutCtx = injectDeps(Layout);
@@ -17,6 +18,15 @@ export default function (injectDeps, {FlowRouter}){
         action(){
             mount(MainLayoutCtx,{
                 content: () => (<ItemList />)
+            });
+        }
+    });
+
+    FlowRouter.route('/edit/:itemId', {
+        name: 'items.edit',
+        action({itemId}) {
+            mount(MainLayoutCtx, {
+                content: () => (<EditItem itemId={itemId} />)
             });
         }
     });
